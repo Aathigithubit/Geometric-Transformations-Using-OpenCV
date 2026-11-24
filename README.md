@@ -125,6 +125,14 @@ rotated_image = cv2.warpAffine(image, M_rotation, (width, height))  # Apply rota
 plt.imshow(cv2.cvtColor(rotated_image, cv2.COLOR_BGR2RGB))  # Display the rotated image
 plt.title("Rotated Image")  # Set title
 plt.axis('off')
+# Step 7: Image Cropping
+x, y, w, h = 100, 100, 200, 150  # Define the top-left corner (x, y) and the width (w) and height (h) of the crop
+# Cropping the image from coordinates (x, y) to (x+w, y+h)
+cropped_image = image[y:y+h, x:x+w]
+# The crop is performed by slicing the image array in the y and x directions
+plt.imshow(cv2.cvtColor(cropped_image, cv2.COLOR_BGR2RGB))  # Display the cropped image
+plt.title("Cropped Image")  # Set title
+plt.axis('off')
 ---
 
 ##  Output
