@@ -92,7 +92,14 @@ translated_image = cv2.warpAffine(image, M_translation, (image.shape[1], image.s
 plt.imshow(cv2.cvtColor(translated_image, cv2.COLOR_BGR2RGB))  # Display the translated image
 plt.title("Translated Image")  
 plt.axis('off')
-
+# Step 3: Image Scaling
+fx, fy = 5.0, 2.0  # Scaling factors (1.5x scaling for both width and height)
+scaled_image = cv2.resize(image, None, fx=fx, fy=fy, interpolation=cv2.INTER_LINEAR)
+# resize: Resize the image by scaling factors fx, fy
+# INTER_LINEAR: Uses bilinear interpolation for resizing
+plt.imshow(cv2.cvtColor(scaled_image, cv2.COLOR_BGR2RGB))  # Display the scaled image
+plt.title("Scaled Image")  # Set title
+plt.axis('off')
 ---
 
 ##  Output
