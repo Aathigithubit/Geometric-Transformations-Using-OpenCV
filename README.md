@@ -115,7 +115,16 @@ reflected_image = cv2.flip(image, 2)  # Flip the image horizontally (1 means hor
 plt.imshow(cv2.cvtColor(reflected_image, cv2.COLOR_BGR2RGB))  # Display the reflected image
 plt.title("Reflected Image")  # Set title
 plt.axis('off')
-
+# Step 6: Image Rotation
+(height, width) = image.shape[:2]  # Get the image height and width
+angle = 45  # Rotation angle in degrees (rotate by 45 degrees)
+center = (width // 2, height // 2)  # Set the center of rotation to the image center
+M_rotation = cv2.getRotationMatrix2D(center, angle, 1)  # Get the rotation matrix
+# getRotationMatrix2D: Takes the center of rotation, angle, and scale factor (1 means no scaling)
+rotated_image = cv2.warpAffine(image, M_rotation, (width, height))  # Apply rotation
+plt.imshow(cv2.cvtColor(rotated_image, cv2.COLOR_BGR2RGB))  # Display the rotated image
+plt.title("Rotated Image")  # Set title
+plt.axis('off')
 ---
 
 ##  Output
