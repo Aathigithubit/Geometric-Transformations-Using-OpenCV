@@ -109,6 +109,12 @@ sheared_image = cv2.warpAffine(image, shear_matrix, (image.shape[1], image.shape
 plt.imshow(cv2.cvtColor(sheared_image, cv2.COLOR_BGR2RGB))  # Display the sheared image
 plt.title("Sheared Image")  # Set title
 plt.axis('off')
+# Step 5: Image Reflection
+reflected_image = cv2.flip(image, 2)  # Flip the image horizontally (1 means horizontal flip)
+# flip: 1 means horizontal flip, 0 would be vertical flip, -1 would flip both axes
+plt.imshow(cv2.cvtColor(reflected_image, cv2.COLOR_BGR2RGB))  # Display the reflected image
+plt.title("Reflected Image")  # Set title
+plt.axis('off')
 
 ---
 
