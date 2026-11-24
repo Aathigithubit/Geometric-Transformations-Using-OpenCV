@@ -100,6 +100,16 @@ scaled_image = cv2.resize(image, None, fx=fx, fy=fy, interpolation=cv2.INTER_LIN
 plt.imshow(cv2.cvtColor(scaled_image, cv2.COLOR_BGR2RGB))  # Display the scaled image
 plt.title("Scaled Image")  # Set title
 plt.axis('off')
+# Step 4: Image Shearing
+shear_matrix = np.float32([[1, 0.5, 0], [0.5, 1, 0]])  # Shearing matrix
+# The matrix shears the image by a factor of 0.5 in both x and y directions
+# [1, 0.5, 0] - Shear along the x-axis (horizontal)
+# [0.5, 1, 0] - Shear along the y-axis (vertical)
+sheared_image = cv2.warpAffine(image, shear_matrix, (image.shape[1], image.shape[0]))
+plt.imshow(cv2.cvtColor(sheared_image, cv2.COLOR_BGR2RGB))  # Display the sheared image
+plt.title("Sheared Image")  # Set title
+plt.axis('off')
+
 ---
 
 ##  Output
