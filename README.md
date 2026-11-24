@@ -75,7 +75,15 @@ Read the input image in color mode.
 ### Register No: ** 212223220001____________________________  
 
 
-
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+# Step 1: Load the image
+image = cv2.imread('my.jpg')  # Load the image from file
+# Display the original image
+plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))  # Convert BGR to RGB for correct display
+plt.title("Original Image")  
+plt.axis('off') 
 ---
 
 ##  Output
