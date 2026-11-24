@@ -70,10 +70,11 @@ Read the input image in color mode.
 ##  Program
 
 ### Developed By:
-**Name:** ____________________________  
+##Name:** AATHI S____________________________  
 
-### Register No:
-____________________________  
+### Register No: ** 212223220001____________________________  
+
+
 
 ---
 
